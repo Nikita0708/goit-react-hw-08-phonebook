@@ -1,0 +1,46 @@
+.form {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  margin-bottom: 25px;
+}
+.label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+.label:hover .input {
+  color: rgb(190, 123, 0);
+  border: 2px solid rgb(190, 123, 0);
+}
+.text {
+  color: lightgrey;
+  transition: 0.2s;
+  margin-bottom: 5px;
+}
+.input {
+  width: 300px;
+  height: 40px;
+  border: 2px solid black;
+  outline: none;
+  padding-left: 10px;
+  transition: 0.2s;
+  color: black;
+}
+.input:focus,
+.input:active {
+  color: rgb(190, 123, 0);
+  border: 2px solid rgb(190, 123, 0);
+}
+.btn {
+  width: 315px;
+  height: 40px;
+  border: none;
+  font-size: 17px;
+  font-weight: 600;
+  background-color: rgb(190, 123, 0);
+}

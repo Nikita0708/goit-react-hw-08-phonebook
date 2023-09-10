@@ -5,14 +5,14 @@ import { Form, Field, ErrorMessage } from 'formik';
 import 'yup-phone';
 
 import { useDispatch } from 'react-redux';
-import { addContact } from 'redux/operations';
+import { addContact } from 'redux/contactsReducer';
 import { useSelector } from 'react-redux/es/exports';
-import { selectContacts } from 'redux/selectors';
+import { selectContacts } from 'redux/contactsReducer';
 import s from './contactform.module.css';
 
 const schema = yup.object().shape({
-  name: yup.string().required('This field is required'),
-  number: yup.string().required(),
+  name: yup.string().required('Name is required'),
+  number: yup.string().required('Number is required'),
 });
 
 const idInputName = nanoid();
@@ -50,8 +50,14 @@ export const ContactForm = () => {
       <Form className={s.form}>
         <div className={s.item}>
           <label htmlFor={idInputName}>Name</label>
-          <Field id={idInputName} type="text" name="name" placeholder="Name" />
-          <ErrorMessage name="name" component="p" />
+          <Field
+            id={idInputName}
+            type="text"
+            name="name"
+            placeholder="Name"
+            required
+          />
+          <ErrorMessage name="name" component="p" className={s.error} />
         </div>
         <div className={s.item}>
           <label htmlFor={idInputNumber}>Number</label>
@@ -60,8 +66,9 @@ export const ContactForm = () => {
             type="tel"
             name="number"
             placeholder="+0000000000000"
+            required
           />
-          <ErrorMessage name="number" component="p" />
+          <ErrorMessage name="number" component="p" className={s.error} />
         </div>
 
         <button type="submit">Add contact</button>

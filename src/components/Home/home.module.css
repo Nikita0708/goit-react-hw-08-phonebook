@@ -1,0 +1,10 @@
+.wrap {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text {
+  color: rgb(190, 123, 0);
+  font-size: 40px;
+}

@@ -10,6 +10,8 @@ import {
 } from 'redux/authReducer';
 import { useEffect } from 'react';
 
+import s from './app.module.css';
+
 export const App = () => {
   const dispatch = useDispatch();
   const authenticated = useSelector(selectUserAuthentication);
@@ -23,20 +25,35 @@ export const App = () => {
   }, [dispatch]);
   return (
     <>
-      {authenticated ? (
-        <>
-          <h1>Contacts App</h1>
-          <p>Hello, {userData.name}</p>
-          <button onClick={handleLogOut}>Log out</button>
-          <Link to="/contacts">Phonebook</Link>
-        </>
-      ) : (
-        <nav>
-          <h1>You must be signed in to use this app</h1>
-          <Link to="/login">LogIn</Link>
-          <Link to="/signup">SignUp</Link>
-        </nav>
-      )}
+      <header className={s.header}>
+        {authenticated ? (
+          <>
+            <div className={s.top_wrap}>
+              <p className={s.greeting_text}>
+                Hello, <b>{userData.name}</b>{' '}
+              </p>
+              <button onClick={handleLogOut} className={s.logout}>
+                Log out
+              </button>
+            </div>
+            <Link to="/contacts" className={s.contacts_link}>
+              Phonebook
+            </Link>
+          </>
+        ) : (
+          <>
+            <h1 className={s.title}>Firstly, log in {'-->'} </h1>
+            <nav className={s.nav}>
+              <Link to="/login" className={s.nav_link}>
+                LogIn
+              </Link>
+              <Link to="/signup" className={s.nav_link}>
+                Sign Up
+              </Link>
+            </nav>
+          </>
+        )}
+      </header>
       <Routes>
         {AppRoutes.map(({ path, element }) => (
           <Route path={path} element={element} />
