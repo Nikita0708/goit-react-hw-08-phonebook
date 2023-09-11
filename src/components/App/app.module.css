@@ -43,3 +43,19 @@
   color: rgb(190, 123, 0);
   text-decoration: underline;
 }
+.contacts_link {
+  text-decoration: underline transparent;
+  color: black;
+  font-weight: 500;
+  font-size: 20px;
+  transition: 0.2s;
+  background-color: transparent;
+  border: none;
+}
+.contacts_link:first-child {
+  margin-right: 10px;
+}
+.contacts_link:hover {
+  color: rgb(190, 123, 0);
+  text-decoration: underline;
+}

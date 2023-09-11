@@ -16,7 +16,6 @@ export const Loader = () => {
         innerCircleColor=""
         middleCircleColor=""
       />
-      ;
     </StyledLoader>
   );
 };

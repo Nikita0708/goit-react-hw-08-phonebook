@@ -36,9 +36,14 @@ export const App = () => {
                 Log out
               </button>
             </div>
-            <Link to="/contacts" className={s.contacts_link}>
-              Phonebook
-            </Link>
+            <div>
+              <Link to="/contacts" className={s.contacts_link}>
+                Phonebook
+              </Link>
+              <Link to="/" className={s.contacts_link}>
+                Home
+              </Link>
+            </div>
           </>
         ) : (
           <>

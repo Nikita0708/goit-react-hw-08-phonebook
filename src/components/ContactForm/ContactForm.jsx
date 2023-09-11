@@ -49,29 +49,36 @@ export const ContactForm = () => {
     >
       <Form className={s.form}>
         <div className={s.item}>
-          <label htmlFor={idInputName}>Name</label>
+          <label htmlFor={idInputName} className={s.label}>
+            Name *
+          </label>
           <Field
             id={idInputName}
             type="text"
             name="name"
             placeholder="Name"
+            className={s.input}
             required
           />
           <ErrorMessage name="name" component="p" className={s.error} />
         </div>
         <div className={s.item}>
-          <label htmlFor={idInputNumber}>Number</label>
+          <label htmlFor={idInputNumber} className={s.label}>
+            Number *
+          </label>
           <Field
             id={idInputNumber}
             type="tel"
             name="number"
-            placeholder="+0000000000000"
+            placeholder="+123 456 7890"
+            className={s.input}
             required
           />
           <ErrorMessage name="number" component="p" className={s.error} />
         </div>
-
-        <button type="submit">Add contact</button>
+        <button type="submit" className={s.btn}>
+          Add contact
+        </button>
       </Form>
     </Formik>
   );

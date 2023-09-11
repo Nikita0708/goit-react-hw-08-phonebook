@@ -19,7 +19,6 @@
 }
 .text {
   color: lightgrey;
-  transition: 0.2s;
   margin-bottom: 5px;
 }
 .input {

@@ -1,16 +1,8 @@
-.form {
-  margin-top: 20px;
+.wrap {
+  margin-top: 15px;
   margin-bottom: 20px;
-}
-.item {
-  margin-bottom: 15px;
   display: flex;
   flex-direction: column;
-}
-.error {
-  margin-top: 4px;
-  color: red;
-  font-size: 14px;
 }
 .label {
   color: lightgrey;
@@ -25,17 +17,9 @@
   transition: 0.2s;
   color: black;
 }
-.item:hover .input,
+.wrap:hover .input,
 .input:focus,
 .input:active {
   color: rgb(190, 123, 0);
   border: 2px solid rgb(190, 123, 0);
-}
-.btn {
-  width: 315px;
-  height: 40px;
-  border: none;
-  font-size: 17px;
-  font-weight: 600;
-  background-color: rgb(190, 123, 0);
 }
